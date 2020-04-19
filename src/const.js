@@ -1,8 +1,18 @@
-export const COLORS = [`black`, `yellow`, `blue`, `green`, `pink`];
+const COLORS = [`black`, `yellow`, `blue`, `green`, `pink`];
 
-export const DAYS = [`mo`, `tu`, `we`, `th`, `fr`, `sa`, `su`];
+const WeekDays = {
+  MONDAY: `mo`,
+  TUESDAY: `tu`,
+  WEDNESDAY: `we`,
+  THURSDAY: `th`,
+  FRIDAY: `fr`,
+  SATURDAY: `sa`,
+  SUNDAY: `su`
+}
+Object.freeze(WeekDays);
+const DAYS = [WeekDays.MONDAY, WeekDays.THURSDAY, WeekDays.WEDNESDAY, WeekDays.THURSDAY, WeekDays.FRIDAY, WeekDays.SATURDAY, WeekDays.SUNDAY];
 
-export const MONTH_NAMES = [
+const MONTH_NAMES = [
   `January`,
   `February`,
   `March`,
@@ -16,3 +26,5 @@ export const MONTH_NAMES = [
   `November`,
   `December`,
 ];
+
+export {COLORS, WeekDays, DAYS, MONTH_NAMES}

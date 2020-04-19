@@ -1,20 +1,21 @@
-import {COLORS} from "../const.js";
+import {COLORS, WeekDays} from '../const';
 
-const DescriptionItems = [
+const DESCRIPTION_ITEMS = [
   `Изучить теорию`,
   `Сделать домашку`,
   `Пройти интенсив на соточку`,
 ];
 
 const DefaultRepeatingDays = {
-  "mo": false,
-  "tu": false,
-  "we": false,
-  "th": false,
-  "fr": false,
-  "sa": false,
-  "su": false,
+  [WeekDays.MONDAY]: false,
+  [WeekDays.TUESDAY]: false,
+  [WeekDays.WEDNESDAY]: false,
+  [WeekDays.THURSDAY]: false,
+  [WeekDays.FRIDAY]: false,
+  [WeekDays.SATURDAY]: false,
+  [WeekDays.SUNDAY]: false,
 };
+Object.freeze(DefaultRepeatingDays);
 
 const getRandomArrayItem = (array) => {
   const randomIndex = getRandomIntegerNumber(0, array.length);
@@ -38,15 +39,17 @@ const getRandomDate = () => {
 
 const generateRepeatingDays = () => {
   return Object.assign({}, DefaultRepeatingDays, {
-    "mo": Math.random() > 0.5,
+    [WeekDays.MONDAY]: Math.random() > 0.5,
   });
+
+
 };
 
 const generateTask = () => {
   const dueDate = Math.random() > 0.5 ? null : getRandomDate();
 
   return {
-    description: getRandomArrayItem(DescriptionItems),
+    description: getRandomArrayItem(DESCRIPTION_ITEMS),
     dueDate,
     repeatingDays: dueDate ? DefaultRepeatingDays : generateRepeatingDays(),
     color: getRandomArrayItem(COLORS),

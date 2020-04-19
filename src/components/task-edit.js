@@ -1,5 +1,5 @@
-import {COLORS, DAYS, MONTH_NAMES} from "../const.js";
-import {formatTime} from "../utils.js";
+import {COLORS, DAYS, MONTH_NAMES} from '../const';
+import {formatTime} from '../utils';
 
 const createColorsMarkup = (colors, currentColor) => {
   return colors
@@ -107,15 +107,11 @@ ${
                   repeat:<span class="card__repeat-status">${isRepeatingTask ? `yes` : `no`}</span>
                 </button>
 
-                  ${
-    isRepeatingTask ?
-      `<fieldset class="card__repeat-days">
-                      <div class="card__repeat-days-inner">
-                        ${repeatingDaysMarkup}
-                      </div>
-                    </fieldset>`
-      : ``
-    }
+                <fieldset class="card__repeat-days" ${isRepeatingTask ? `disabled` : ``}>
+                  <div class="card__repeat-days-inner">
+                    ${repeatingDaysMarkup}
+                  </div>
+                </fieldset>
               </div>
             </div>
 
