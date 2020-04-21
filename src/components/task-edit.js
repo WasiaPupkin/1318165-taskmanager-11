@@ -107,7 +107,7 @@ ${
                   repeat:<span class="card__repeat-status">${isRepeatingTask ? `yes` : `no`}</span>
                 </button>
 
-                <fieldset class="card__repeat-days" ${isRepeatingTask ? `disabled` : ``}>
+                <fieldset class="card__repeat-days" ${isRepeatingTask ? `` : `disabled`}>
                   <div class="card__repeat-days-inner">
                     ${repeatingDaysMarkup}
                   </div>
