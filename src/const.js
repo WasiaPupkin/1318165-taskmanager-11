@@ -8,7 +8,8 @@ const WeekDays = {
   FRIDAY: `fr`,
   SATURDAY: `sa`,
   SUNDAY: `su`
-}
+};
+
 Object.freeze(WeekDays);
 const DAYS = [WeekDays.MONDAY, WeekDays.THURSDAY, WeekDays.WEDNESDAY, WeekDays.THURSDAY, WeekDays.FRIDAY, WeekDays.SATURDAY, WeekDays.SUNDAY];
 
@@ -27,4 +28,4 @@ const MONTH_NAMES = [
   `December`,
 ];
 
-export {COLORS, WeekDays, DAYS, MONTH_NAMES}
+export {COLORS, WeekDays, DAYS, MONTH_NAMES};
